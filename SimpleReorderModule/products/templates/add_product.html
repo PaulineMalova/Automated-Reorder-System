@@ -2,21 +2,50 @@
 <html>
 <head>
 	<title>Add Product</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<style>
+		body{
+			background-color: #eee;
+			width: 400px;
+			margin: 0 auto;
+			padding: 30px 0px;
+		}
+		h2{
+			text-align: left;
+		}
+		form label{
+			width:40%;
+		}
+		form input{
+			width: 50%;
+		}
+	</style>
 </head>
 
 <body>
 
 	<h2>Add a new product</h2>
+	<br>
+
+	{% load crispy_forms_tags %}
+
+	{% block content %}
 
 
 	<form method="POST"> {% csrf_token %}
 
 		{{ form.as_p }}
 
-		<button type = "submit">ADD</button>
+		<button type = "submit" class="btn btn-primary">ADD</button>
 
 
 	</form>	
+
+	{% endblock %}
 
 
 

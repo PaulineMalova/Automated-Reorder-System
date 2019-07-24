@@ -2,14 +2,32 @@
 <html>
 <head>
 	<title>All products</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<style>
+		body{
+			background-color: #eee;
+			width: 1000px;
+			margin: 0 auto;
+			padding: 30px 0px;
+		}
+		a{ 
+			color: black;
+			text-decoration: none;
+		}
+	</style>
 </head>
 <body>
 
-	<a href="/product/add"><button>ADD PRODUCT</button></a>
+	<a href="/product/add"><button class="btn btn-primary">ADD PRODUCT</button></a>
 
 	<br><br>
 
-	<table>
+	<table class="table table-bordered table-striped table-hover">
 		
 		<tr>
 			<th>Name</th>
@@ -30,20 +48,20 @@
 				<td>{{ product.quantity }}</td>
 				<td>{{ product.default_quantity }}</td>
 				<td>{{ product.reorder_level }}</td>
-				<td><a href = "/product/sell/{{product.pk}}/"><button>SELL PRODUCT</button></a></td>
+				<td><a href = "/product/sell/{{product.pk}}/"><button class="btn">SELL PRODUCT</button></a></td>
 			</tr>
 
 		{% endfor %}	
 
 	</table>
 
-<br><br>
+<br>
 
-	<a href="/product/reorders/"><button>UNPROCESSED REORDERS</button></a>
+	<a href="/product/reorders/"><button class="btn btn-primary">UNPROCESSED REORDERS</button></a>
 
-<br><br>
+<br><br><br>
 
-	<a href = "/product/dispatch/"><button>PROCESSED REORDERS</button></a>
+	<a href = "/product/dispatch/"><button class="btn btn-primary">PROCESSED REORDERS</button></a>
 
 
 </body>

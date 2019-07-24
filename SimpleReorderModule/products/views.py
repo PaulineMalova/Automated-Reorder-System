@@ -67,7 +67,6 @@ def dispatch_reorder(request):
 				processed_reorders.append(product)
 				product.save()
 				reorders.remove(product)
-				# return redirect("list_products")
 
 	return render(request, "processed_reorders.html", {"processed_reorders":processed_reorders}, {"products":products})	
 
